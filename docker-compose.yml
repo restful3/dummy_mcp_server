@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  dummy-mcp-server:
+    image: python:3.10-slim
+    container_name: dummy_mcp_server
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "8002:8002"
+    volumes:
+      - .:/app
+    networks:
+      - nginx-n8n-net
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt &&
+             python -m app.main"      
+
+networks:
+  nginx-n8n-net:
+    external: true 
