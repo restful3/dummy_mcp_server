@@ -14,7 +14,7 @@ mcp.tool()(echo)
 mcp.tool()(dummy)
 
 if __name__ == "__main__":
-    print("FastMCP 1.0.0 + SSE 테스트 서버 시작 (Target Port: 8002)", flush=True)
+    print("FastMCP 1.0.0 + SSE 테스트 서버 시작2 (Target Port: 8002)", flush=True)
     try:
         mcp.run(transport="sse")
     except Exception as e:
